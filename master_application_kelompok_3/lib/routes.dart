@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:master_application_kelompok_3/chat.dart';
 import 'package:master_application_kelompok_3/firstscreen.dart';
-import 'package:master_application_kelompok_3/dwiandi.dart';
+
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,10 +13,6 @@ class RouteGenerator {
           builder: (_) => firstscreen()
           );
 
-      case '/dwiandi':
-          return MaterialPageRoute(
-            builder: (_) => dwiandi()
-        );
         case'/chat':
         return MaterialPageRoute(
           builder: (_) => ChatPage()
