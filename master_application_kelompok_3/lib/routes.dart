@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:master_application_kelompok_3/chat.dart';
-import 'package:master_application_kelompok_3/firstscreen.dart';
+import 'package:master_application_kelompok_3/home.dart';
 
 
 class RouteGenerator {
@@ -10,14 +9,10 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (_) => firstscreen()
+          builder: (_) => home()
           );
 
-        case'/chat':
-        return MaterialPageRoute(
-          builder: (_) => ChatPage()
-        );
-
+        
       default:
         return _errorRoute();
     }
