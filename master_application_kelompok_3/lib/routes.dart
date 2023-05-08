@@ -8,6 +8,7 @@ import 'package:master_application_kelompok_3/menu_layanan/perbaikandarurat.dart
 import 'package:master_application_kelompok_3/menu_layanan/perbaikanmesin.dart';
 import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
+import 'package:master_application_kelompok_3/profil.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -54,6 +55,11 @@ class RouteGenerator {
           return MaterialPageRoute(
           builder: (_) => ServicACScreen()
           );
+    case '/profil':
+          return MaterialPageRoute(
+          builder: (_) => ProfilePage()
+          );
+
     default:
           return _errorRoute();  
     }
