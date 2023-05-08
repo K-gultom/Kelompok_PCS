@@ -5,51 +5,44 @@ class home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DOKTER MOBIL'),
+        title: Row(
+          children: [
+            Icon(Icons.commute),
+            SizedBox(width: 8),
+            Text('DOKTER MOBIL'),
+          ],
+        ),
       ),
       body: GridView.count(
         crossAxisCount: 2, // jumlah kolom
+        childAspectRatio: 1.3, // rasio aspek child
+        padding: EdgeInsets.all(16),
         children: [
-          _buildButton('Layanan', Icons.directions_car, context),
-          _buildButton('Pomo', Icons.shopping_cart, context),
-          _buildButton('Lokasi Bengkel', Icons.location_on, context),
-          _buildButton('Pesanan Saya', Icons.local_offer, context),
-          _buildButton('Riwayat Pemesanan', Icons.history, context),
-          _buildButton('Profil', Icons.person, context),
+          _buildButton('Layanan', Icons.directions_car, Colors.red, context),
+          _buildButton('Konsultasi', Icons.chat, Colors.blue, context),
+          _buildButton('Lokasi Bengkel', Icons.location_on, Colors.green, context),
+          _buildButton('Pesanan Saya', Icons.local_offer, Colors.pink, context),
+          _buildButton('Riwayat Pemesanan', Icons.history, Colors.purple, context),
+          _buildButton('Profil', Icons.person, Colors.orange, context),
         ],
       ),
     );
   }
 
-  Widget _buildButton(String title, IconData icon, BuildContext context) {
-    Color color;
-    if (title == 'Layanan') {
-      color = Colors.red;
-    } else if (title == 'Promo') {
-      color = Colors.blue;
-    } else if (title == 'Lokasi Bengkel') {
-      color = Colors.green;
-    } else if (title == 'Pesanan Saya') {
-      color = Colors.pink;
-    } else if (title == 'Riwayat Pemesanan') {
-      color = Colors.purple;
-    } else {
-      color = Colors.orange;
-    }
-
+  Widget _buildButton(String title, IconData icon, Color color, BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(25.0),
+      margin: EdgeInsets.all(8.0),
       child: ElevatedButton(
         onPressed: () {
           // aksi ketika tombol ditekan
           if (title == 'Layanan') {
             Navigator.pushNamed(context, '/layanan');
-          } else if (title == 'Pesanan Saya') {
-            Navigator.pushNamed(context, '/Pesanan-Saya');
+          } else if (title == 'Konsultasi') {
+            Navigator.pushNamed(context, '/konsultasi');
           } else if (title == 'Lokasi Bengkel') {
             Navigator.pushNamed(context, '/lokasi-bengkel');
-          } else if (title == 'Promo') {
-            Navigator.pushNamed(context, '/promo');
+          } else if (title == 'Pesanan Saya') {
+            Navigator.pushNamed(context, '/pesanan-saya');
           } else if (title == 'Riwayat Pemesanan') {
             Navigator.pushNamed(context, '/riwayat-pemesanan');
           } else {
@@ -58,13 +51,25 @@ class home extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           primary: color,
+          minimumSize: Size(double.infinity, 0),
+          padding: EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon),
-            SizedBox(width: 10),
-            Text(title),
+            Icon(icon, size: 32),
+            SizedBox(height: 8),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
