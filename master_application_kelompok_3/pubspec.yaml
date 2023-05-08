@@ -67,6 +67,10 @@ flutter:
     - assets/images/palcomtech.jpg
     - assets/images/ig.png
     - assets/images/maps.png
+    - assets/images/ban.png
+    - assets/images/car.png
+    - assets/images/service.png
+    - assets/images/oli.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
