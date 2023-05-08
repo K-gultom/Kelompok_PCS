@@ -2,45 +2,60 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class PesananSayatest extends StatefulWidget {
+class PesananSaya extends StatefulWidget {
   @override
   _PesananSayaPage createState() => _PesananSayaPage();
 }
 
-class _PesananSayaPage extends State<PesananSayatest> {
+class _PesananSayaPage extends State<PesananSaya> {
   final List<Map<String, dynamic>> _pesanan = [
     {
       'gambar': 'assets/images/ig.png',
       'nama': 'Produk 1',
       'jumlah': 2,
-      'bayar': false,
+      'bayar' : false,
     },
     {
       'gambar': 'assets/images/ig.png',
       'nama': 'Produk 2',
       'jumlah': 1,
-      'bayar': false,
+      'bayar' : false,
     },
     {
       'gambar': 'assets/images/ig.png',
       'nama': 'Produk 3',
       'jumlah': 3,
-      'bayar': false,
+      'bayar' : false,
+    },
+    {
+      'gambar': 'assets/images/ig.png',
+      'nama': 'Produk 3',
+      'jumlah': 3,
+      'bayar' : false,
+    },
+    {
+      'gambar': 'assets/images/ig.png',
+      'nama': 'Produk 3',
+      'jumlah': 3,
+      'bayar' : false,
     },
   ];
 
   bool _semuaTerpilih = false;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Row(
-        children: [
-          Text('Pesanan Saya'),
-          SizedBox(width: 12),
-          Icon(Icons.local_offer),
-        ],
-      )),
+        title:  Row(
+          children: [
+            Text('Pesanan Saya'),
+            SizedBox(width: 12),
+            Icon(Icons.local_offer),
+            
+          ],
+        )
+      ),
       body: Column(
         children: [
           Expanded(
@@ -48,41 +63,23 @@ class _PesananSayaPage extends State<PesananSayatest> {
               itemCount: _pesanan.length,
               itemBuilder: (context, index) {
                 final pesanan = _pesanan[index];
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ListTile(
-                        leading: Image.asset(pesanan['gambar']),
-                        title: Text(pesanan['nama']),
-                        subtitle: Text('Jumlah: ${pesanan['jumlah']}'),
-                       
-                    ),
-
-                    Row(
-                      children: [
-
-                        Column(
-                          children: [
-                            Text('Bayar'),
-                            Checkbox(
-                              value: pesanan['bayar'],
-                              onChanged: (value) {
-                                setState(() {
-                                  pesanan['bayar'] = value;
-                                });
-                              }
-                            ),
-                          ],
-                        )
-                       
-
-                      ],
-                    ),
-                  ],
+                return ListTile(
+                  leading: Image.asset(pesanan['gambar']),
+                  title: Text(pesanan['nama']),
+                  subtitle: Text('Jumlah: ${pesanan['jumlah']}'),
+                  trailing: Checkbox(
+                    value: pesanan['bayar'], 
+                    onChanged: (value){
+                      setState(() {
+                        pesanan['bayar'] = value;
+                      });
+                    }
+                  )
                 );
               },
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton(
@@ -105,7 +102,9 @@ class _PesananSayaPage extends State<PesananSayatest> {
                 foregroundColor: Colors.white,
                 visualDensity: VisualDensity.adaptivePlatformDensity,
                 alignment: Alignment.centerLeft,
+                
               ),
+              
             ),
           ),
         ],
