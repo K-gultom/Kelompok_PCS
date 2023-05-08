@@ -10,6 +10,7 @@ import 'package:master_application_kelompok_3/menu_layanan/perbaikandarurat.dart
 import 'package:master_application_kelompok_3/menu_layanan/perbaikanmesin.dart';
 import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
+import 'package:master_application_kelompok_3/profil.dart';
 
 
 class RouteGenerator {
@@ -31,26 +32,28 @@ class RouteGenerator {
       case '/service-berkala':
           return MaterialPageRoute(builder: (_) => ServiceBerkalaScreen());
 
-      case '/serviskakikaki':
-          return MaterialPageRoute(builder: (_) => ServisKakiKaki());
+    case '/ganti-ban':
+        return MaterialPageRoute(builder: (_) => GantiBanScreen());
+        
+    case '/perbaikan-darurat':
+          return MaterialPageRoute(
+          builder: (_) => PerbaikanDaruratScreen()
+          );
+    case '/perbaikan-mesin':
+          return MaterialPageRoute(
+          builder: (_) => PerbaikanMesinScreen()
+          );
+    case '/servis-ac':
+          return MaterialPageRoute(
+          builder: (_) => ServicACScreen()
+          );
+    case '/profil':
+          return MaterialPageRoute(
+          builder: (_) => ProfilePage()
+          );
 
-      case '/ganti-aki':
-          return MaterialPageRoute(builder: (_) => GantiAkiScreen());    
-
-      case '/ganti-ban':
-          return MaterialPageRoute(builder: (_) => GantiBanScreen());
-
-      case '/perbaikan-darurat':
-            return MaterialPageRoute(builder: (_) => PerbaikanDaruratScreen());
-
-      case '/perbaikan-mesin':
-            return MaterialPageRoute(builder: (_) => PerbaikanMesinScreen());
-
-      case '/servis-ac':
-            return MaterialPageRoute(builder: (_) => ServicACScreen());
-
-      default:
-            return _errorRoute();  
+    default:
+          return _errorRoute();  
     }
   }
 
