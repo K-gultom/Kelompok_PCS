@@ -37,6 +37,8 @@ class home extends StatelessWidget {
           // aksi ketika tombol ditekan
           if (title == 'Layanan') {
             Navigator.pushNamed(context, '/layanan');
+          } else if (title == 'Pesanan Saya') {
+            Navigator.pushNamed(context, '/pesanansaya');
           } else if (title == 'Konsultasi') {
             Navigator.pushNamed(context, '/konsultasi');
           } else if (title == 'Lokasi Bengkel') {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:master_application_kelompok_3/home.dart';
+import 'package:master_application_kelompok_3/pesanansaya.dart';
+import 'package:master_application_kelompok_3/bayar.dart';
 import 'package:master_application_kelompok_3/layanan.dart';
 import 'package:master_application_kelompok_3/menu_layanan/gantiaki.dart';
 import 'package:master_application_kelompok_3/menu_layanan/gantiban.dart';
@@ -10,39 +12,29 @@ import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
 import 'package:master_application_kelompok_3/profil.dart';
 
+
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
 
-    
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(
-          builder: (_) => home()
-          );
+        return MaterialPageRoute(builder: (_) => home());
+        
+      case '/pesanansaya':
+        return MaterialPageRoute(builder: (_) => PesananSaya());
 
-    case '/layanan':
-        return MaterialPageRoute(
-          builder: (_) => LayananScreen()
-          );
+      case '/bayar':
+        return MaterialPageRoute(builder: (_) => Bayar());
 
-    case '/service-berkala':
-            return MaterialPageRoute(
-              builder: (_) => ServiceBerkalaScreen()
-              );
-    case '/serviskakikaki':
-              return MaterialPageRoute(
-                builder: (_) => ServisKakiKaki()
-                );
+      case '/layanan':
+          return MaterialPageRoute(builder: (_) => LayananScreen());
 
-    case '/ganti-aki':
-        return MaterialPageRoute(
-          builder: (_) => GantiAkiScreen()
-          );    
+      case '/service-berkala':
+          return MaterialPageRoute(builder: (_) => ServiceBerkalaScreen());
 
     case '/ganti-ban':
-        return MaterialPageRoute(
-          builder: (_) => GantiBanScreen()
-          );
+        return MaterialPageRoute(builder: (_) => GantiBanScreen());
+        
     case '/perbaikan-darurat':
           return MaterialPageRoute(
           builder: (_) => PerbaikanDaruratScreen()
