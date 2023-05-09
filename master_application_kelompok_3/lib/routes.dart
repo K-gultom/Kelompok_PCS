@@ -11,6 +11,7 @@ import 'package:master_application_kelompok_3/menu_layanan/perbaikanmesin.dart';
 import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
 import 'package:master_application_kelompok_3/profil.dart';
+import 'package:master_application_kelompok_3/OrderHistoryScreen.dart';
 import 'package:master_application_kelompok_3/konsultasiScreen.dart';
 
 
@@ -52,10 +53,17 @@ class RouteGenerator {
           return MaterialPageRoute(
           builder: (_) => ProfilePage()
           );
+
+    case '/orderhistoryscreen':
+          return MaterialPageRoute(
+          builder: (_) => OrderHistoryScreen()
+          );
+
    case '/konsultasi':
           return MaterialPageRoute(
           builder: (_) => konsultasiScreen()
           );
+
     default:
           return _errorRoute();  
     }
