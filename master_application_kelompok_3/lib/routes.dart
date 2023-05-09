@@ -19,6 +19,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
 
     switch (settings.name) {
+
       case '/':
         return MaterialPageRoute(builder: (_) => home());
         
@@ -34,35 +35,32 @@ class RouteGenerator {
       case '/service-berkala':
           return MaterialPageRoute(builder: (_) => ServiceBerkalaScreen());
 
-    case '/ganti-ban':
-        return MaterialPageRoute(builder: (_) => GantiBanScreen());
-        
-    case '/perbaikan-darurat':
-          return MaterialPageRoute(
-          builder: (_) => PerbaikanDaruratScreen()
-          );
-    case '/perbaikan-mesin':
-          return MaterialPageRoute(
-          builder: (_) => PerbaikanMesinScreen()
-          );
-    case '/servis-ac':
-          return MaterialPageRoute(
-          builder: (_) => ServicACScreen()
-          );
-    case '/profil':
-          return MaterialPageRoute(
-          builder: (_) => ProfilePage()
-          );
+      case '/serviskakikaki':
+          return MaterialPageRoute(builder: (_) => ServisKakiKaki());
+
+      case '/ganti-aki':
+          return MaterialPageRoute(builder: (_) => GantiAkiScreen());
+
+      case '/perbaikan-darurat':
+          return MaterialPageRoute(builder: (_) => PerbaikanDaruratScreen());
+
+      case '/perbaikan-mesin':
+          return MaterialPageRoute(builder: (_) => PerbaikanMesinScreen());
+
+      case '/servis-ac':
+          return MaterialPageRoute(builder: (_) => ServicACScreen());
+
+      case '/ganti-ban':
+          return MaterialPageRoute(builder: (_) => GantiBanScreen());
+
+      case '/profil':
+          return MaterialPageRoute(builder: (_) => ProfilePage());
 
     case '/orderhistoryscreen':
-          return MaterialPageRoute(
-          builder: (_) => OrderHistoryScreen()
-          );
+          return MaterialPageRoute(builder: (_) => OrderHistoryScreen());
 
    case '/konsultasi':
-          return MaterialPageRoute(
-          builder: (_) => konsultasiScreen()
-          );
+          return MaterialPageRoute(builder: (_) => konsultasiScreen());
 
     default:
           return _errorRoute();  

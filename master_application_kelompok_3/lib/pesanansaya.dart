@@ -11,33 +11,30 @@ class _PesananSayaPage extends State<PesananSaya> {
   final List<Map<String, dynamic>> _pesanan = [
     {
       'gambar': '../assets/images/ban.png',
-      'nama': 'Product 1',
+      'nama': 'Ganti Ban',
       'jumlah': 1,
       'bayar': false,
+      'harga' : 'Rp 3.000.000'
     },
     {
       'gambar': '../assets/images/car.png',
-      'nama': 'Product 2',
+      'nama': 'Perbaikan Mesin',
       'jumlah': 1,
       'bayar': false,
+      'harga' : 'Rp 1.500.000'
     },
-    {
-      'gambar': '../assets/images/oli.png',
-      'nama': 'Product 3',
-      'jumlah': 1,
-      'bayar': false,
-    },
+    // {
+    //   'gambar': '../assets/images/oli.png',
+    //   'nama': 'P',
+    //   'jumlah': 1,
+    //   'bayar': false,
+    // },
     {
       'gambar': '../assets/images/service.png',
-      'nama': 'Product 4',
+      'nama': 'Service Berkala',
       'jumlah': 1,
       'bayar': false,
-    },
-    {
-      'gambar': '../assets/images/ban.png',
-      'nama': 'Product 5',
-      'jumlah': 1,
-      'bayar': false,
+      'harga' : 'Rp 500.000'
     },
   ];
 
@@ -63,8 +60,8 @@ class _PesananSayaPage extends State<PesananSaya> {
             children: [
               Padding(padding: EdgeInsets.all(10.0)),
               Text(
-                'Item list', // Text yang ditampilkan pada tombol
-                style: TextStyle(
+                'Item list',
+                  style: TextStyle(
                   fontSize: 22, // Ukuran font text
                   fontWeight: FontWeight.bold, // Bold text
                   color: Color.fromARGB(255, 0, 0, 0), // Warna text
@@ -73,9 +70,7 @@ class _PesananSayaPage extends State<PesananSaya> {
             ],
           ),
 
-          SizedBox(
-            height: 20.0,
-          ),
+          SizedBox(height: 20.0),
 
           Expanded(
             child: ListView.builder(
@@ -87,24 +82,8 @@ class _PesananSayaPage extends State<PesananSaya> {
                     title: Text(pesanan['nama']),
                     subtitle: Row(
                       children: [
-                        Text('Jumlah:'),
-                        IconButton(
-                          icon: Icon(Icons.remove),
-                          onPressed: () {
-                            setState(() {
-                              pesanan['jumlah']--;
-                            });
-                          },
-                        ),
-                        Text(pesanan['jumlah'].toString()),
-                        IconButton(
-                          icon: Icon(Icons.add),
-                          onPressed: () {
-                            setState(() {
-                              pesanan['jumlah']++;
-                            });
-                          },
-                        ),
+                        Text('Jumlah: ' ),
+                        Text(pesanan['harga']),
                       ],
                     ),
                     trailing: Checkbox(
