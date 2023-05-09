@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class KonsultasiPage extends StatefulWidget {
+class konsultasiScreen extends StatefulWidget {
   @override
-  _KonsultasiPageState createState() => _KonsultasiPageState();
+  _KonsultasiScreenState createState() => _KonsultasiScreenState();
 }
 
-class _KonsultasiPageState extends State<KonsultasiPage> {
+class _KonsultasiScreenState extends State<konsultasiScreen> {
   final TextEditingController _messageController = TextEditingController();
   final List<Map<String, dynamic>> _messages = [];
 
