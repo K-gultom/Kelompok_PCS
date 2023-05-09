@@ -17,6 +17,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
 
     switch (settings.name) {
+
       case '/':
         return MaterialPageRoute(builder: (_) => home());
         
@@ -32,28 +33,23 @@ class RouteGenerator {
       case '/service-berkala':
           return MaterialPageRoute(builder: (_) => ServiceBerkalaScreen());
 
-    case '/ganti-ban':
-        return MaterialPageRoute(builder: (_) => GantiBanScreen());
-        
-    case '/perbaikan-darurat':
-          return MaterialPageRoute(
-          builder: (_) => PerbaikanDaruratScreen()
-          );
-    case '/perbaikan-mesin':
-          return MaterialPageRoute(
-          builder: (_) => PerbaikanMesinScreen()
-          );
-    case '/servis-ac':
-          return MaterialPageRoute(
-          builder: (_) => ServicACScreen()
-          );
-    case '/profil':
-          return MaterialPageRoute(
-          builder: (_) => ProfilePage()
-          );
+      case '/ganti-ban':
+          return MaterialPageRoute(builder: (_) => GantiBanScreen());
 
-    default:
-          return _errorRoute();  
+      case '/perbaikan-darurat':
+            return MaterialPageRoute(builder: (_) => PerbaikanDaruratScreen());
+
+      case '/perbaikan-mesin':
+            return MaterialPageRoute(builder: (_) => PerbaikanMesinScreen());
+
+      case '/servis-ac':
+            return MaterialPageRoute(builder: (_) => ServicACScreen());
+
+      case '/profil':
+            return MaterialPageRoute(builder: (_) => ProfilePage());
+
+      default:
+            return _errorRoute();  
     }
   }
 
