@@ -11,6 +11,7 @@ import 'package:master_application_kelompok_3/menu_layanan/perbaikanmesin.dart';
 import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
 import 'package:master_application_kelompok_3/profil.dart';
+import 'package:master_application_kelompok_3/OrderHistoryScreen.dart';
 
 
 class RouteGenerator {
@@ -50,6 +51,10 @@ class RouteGenerator {
     case '/profil':
           return MaterialPageRoute(
           builder: (_) => ProfilePage()
+          );
+    case '/orderhistoryscreen':
+          return MaterialPageRoute(
+          builder: (_) => OrderHistoryScreen()
           );
 
     default:
