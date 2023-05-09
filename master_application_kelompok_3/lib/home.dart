@@ -46,7 +46,7 @@ class home extends StatelessWidget {
           } else if (title == 'Pesanan Saya') {
             Navigator.pushNamed(context, '/pesanan-saya');
           } else if (title == 'Riwayat Pemesanan') {
-            Navigator.pushNamed(context, '/riwayat-pemesanan');
+            Navigator.pushNamed(context, '/orderhistoryscreen');
           } else {
             Navigator.pushNamed(context, '/profil');
           }

@@ -11,6 +11,8 @@ import 'package:master_application_kelompok_3/menu_layanan/perbaikanmesin.dart';
 import 'package:master_application_kelompok_3/menu_layanan/serviceberkala.dart';
 import 'package:master_application_kelompok_3/menu_layanan/servisac.dart';
 import 'package:master_application_kelompok_3/profil.dart';
+import 'package:master_application_kelompok_3/OrderHistoryScreen.dart';
+import 'package:master_application_kelompok_3/konsultasiScreen.dart';
 
 
 class RouteGenerator {
@@ -33,23 +35,35 @@ class RouteGenerator {
       case '/service-berkala':
           return MaterialPageRoute(builder: (_) => ServiceBerkalaScreen());
 
+      case '/serviskakikaki':
+          return MaterialPageRoute(builder: (_) => ServisKakiKaki());
+
+      case '/ganti-aki':
+          return MaterialPageRoute(builder: (_) => GantiAkiScreen());
+
+      case '/perbaikan-darurat':
+          return MaterialPageRoute(builder: (_) => PerbaikanDaruratScreen());
+
+      case '/perbaikan-mesin':
+          return MaterialPageRoute(builder: (_) => PerbaikanMesinScreen());
+
+      case '/servis-ac':
+          return MaterialPageRoute(builder: (_) => ServicACScreen());
+
       case '/ganti-ban':
           return MaterialPageRoute(builder: (_) => GantiBanScreen());
 
-      case '/perbaikan-darurat':
-            return MaterialPageRoute(builder: (_) => PerbaikanDaruratScreen());
-
-      case '/perbaikan-mesin':
-            return MaterialPageRoute(builder: (_) => PerbaikanMesinScreen());
-
-      case '/servis-ac':
-            return MaterialPageRoute(builder: (_) => ServicACScreen());
-
       case '/profil':
-            return MaterialPageRoute(builder: (_) => ProfilePage());
+          return MaterialPageRoute(builder: (_) => ProfilePage());
 
-      default:
-            return _errorRoute();  
+    case '/orderhistoryscreen':
+          return MaterialPageRoute(builder: (_) => OrderHistoryScreen());
+
+   case '/konsultasi':
+          return MaterialPageRoute(builder: (_) => konsultasiScreen());
+
+    default:
+          return _errorRoute();  
     }
   }
 
