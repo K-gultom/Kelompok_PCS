@@ -13,14 +13,14 @@ class _PesananSayaPage extends State<PesananSaya> {
       'gambar': '../assets/images/ban.png',
       'nama': 'Ganti Ban',
       'jumlah': 1,
-      'bayar': false,
+      'pilih': false,
       'harga' : 'Rp 3.000.000'
     },
     {
       'gambar': '../assets/images/car.png',
       'nama': 'Perbaikan Mesin',
       'jumlah': 1,
-      'bayar': false,
+      'pilih': false,
       'harga' : 'Rp 1.500.000'
     },
     // {
@@ -33,12 +33,19 @@ class _PesananSayaPage extends State<PesananSaya> {
       'gambar': '../assets/images/service.png',
       'nama': 'Service Berkala',
       'jumlah': 1,
-      'bayar': false,
+      'pilih': false,
       'harga' : 'Rp 500.000'
+    },
+    {
+      'gambar': '../assets/images/car.png',
+      'nama': 'Perbaikan Mesin',
+      'jumlah': 1,
+      'pilih': false,
+      'harga' : 'Rp 1.500.000'
     },
   ];
 
-  bool _semuaTerpilih = false;
+  // bool _semuaTerpilih = false;
 
   @override
   Widget build(BuildContext context) {
@@ -87,10 +94,10 @@ class _PesananSayaPage extends State<PesananSaya> {
                       ],
                     ),
                     trailing: Checkbox(
-                        value: pesanan['bayar'],
+                        value: pesanan['pilih'],
                         onChanged: (value) {
                           setState(() {
-                            pesanan['bayar'] = value;
+                            pesanan['pilih'] = value;
                           });
                         }));
               },
