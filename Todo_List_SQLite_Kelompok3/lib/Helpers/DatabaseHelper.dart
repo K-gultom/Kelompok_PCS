@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:todo_list/Models/note.dart';
+import 'package:todo_list/models/note.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._();
